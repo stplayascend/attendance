@@ -62,7 +62,7 @@ export default function StudentDashboard() {
             {user?.usn} · Sem {user?.semester} · Div {user?.division}
           </Text>
         </View>
-        <TouchableOpacity testID="student-logout" onPress={logout} style={s.logoutBtn}>
+        <TouchableOpacity testID="student-logout" onPress={async () => { await logout(); router.replace("/"); }} style={s.logoutBtn}>
           <Feather name="log-out" size={20} color={colors.textSecondary} />
         </TouchableOpacity>
       </View>
